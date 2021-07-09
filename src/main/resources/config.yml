@@ -1,0 +1,13 @@
+# MyMCMMOPet Configs
+
+# Does player get McMMO Taming Experience when Leashing a MyPet
+petLeashGetExp: true
+
+# Does player lose McMMO Taming Experience when Releasing a MyPet
+petReleaseLoseExp: true
+
+# Does player get McMMO Taming Experience when a MyPet attacks
+petAttackGetExp: true
+
+# Does a MyPet take fall damage
+petFallDamage: false

@@ -6,6 +6,8 @@ import com.gmail.nossr50.datatypes.skills.PrimarySkillType;
 import com.gmail.nossr50.util.skills.CombatUtils;
 import de.Keyle.MyPet.api.entity.MyPet;
 import de.Keyle.MyPet.api.entity.MyPetBukkitEntity;
+import io.github.takato65.mymcmmopet.Config;
+import io.github.takato65.mymcmmopet.MyMCMMOPet;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -14,10 +16,12 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import static org.bukkit.Bukkit.getLogger;
 
-public class EntityListener implements Listener {
+public class PetListener implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+        if (!MyMCMMOPet.config.getBoolean(Config.menu[0]))
+            return;
         if (event.getDamager() instanceof MyPetBukkitEntity) {
             //getLogger().info("[MyMCMMOPet] attacked");
             if (event.getEntity() instanceof LivingEntity){
